@@ -64,6 +64,14 @@
 
     </properties>
 
+  <repositories>
+    <repository>
+      <id>confluent</id>
+      <name>Confluent</name>
+      <url>${confluent.maven.repo}</url>
+    </repository>
+  </repositories>
+
     <dependencies>
         <dependency>
             <groupId>org.apache.kafka</groupId>
