@@ -42,38 +42,13 @@
         </license>
     </licenses>
 
-    <scm>
-        <connection>scm:git:git://github.com/couchbase/kafka-connect-couchbase.git</connection>
-        <developerConnection>scm:git:git@github.com:couchbase/kafka-connect-couchbase.git</developerConnection>
-        <url>https://github.com/couchbase/kafka-connect-couchbase</url>
-        <tag>HEAD</tag>
-    </scm>
-
-    <issueManagement>
-        <system>Couchbase JIRA</system>
-        <url>http://www.couchbase.com/issues/browse/KAFKAC</url>
-    </issueManagement>
-
-    <developers>
-        <developer>
-            <id>avsej</id>
-            <name>Sergey Avseyev</name>
-            <email>sergey@couchbase.com</email>
-        </developer>
-        <developer>
-            <id>dnault</id>
-            <name>David Nault</name>
-            <email>david.nault@couchbase.com</email>
-        </developer>
-    </developers>
-
     <properties>
         <java-compat.version>1.6</java-compat.version>
         <confluent.version>3.1.1</confluent.version>
         <kafka-connect-api.version>0.10.1.1</kafka-connect-api.version>
         <kafka-connect-json.version>0.10.1.1</kafka-connect-json.version>
         <kafka-streams.version>0.10.1.1</kafka-streams.version>
-        <dcp-client.version>0.12.0</dcp-client.version>
+        <dcp-client.version>0.13.0</dcp-client.version>
         <java-client.version>2.5.1</java-client.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <confluent.maven.repo>http://packages.confluent.io/maven/</confluent.maven.repo>
@@ -88,14 +63,6 @@
         <autoReleaseAfterClose>false</autoReleaseAfterClose>
 
     </properties>
-
-    <repositories>
-        <repository>
-            <id>confluent</id>
-            <name>Confluent</name>
-            <url>${confluent.maven.repo}</url>
-        </repository>
-    </repositories>
 
     <dependencies>
         <dependency>
@@ -247,32 +214,11 @@
                 </executions>
             </plugin>
             <plugin>
-                <groupId>org.sonatype.plugins</groupId>
-                <artifactId>nexus-staging-maven-plugin</artifactId>
-                <version>1.6.7</version>
-                <extensions>true</extensions>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-deploy-plugin</artifactId>
+                <version>2.8.2</version>
                 <configuration>
-                    <serverId>ossrh</serverId>
-                    <nexusUrl>https://oss.sonatype.org/</nexusUrl>
-                    <autoReleaseAfterClose>${autoReleaseAfterClose}</autoReleaseAfterClose>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>com.bazaarvoice.maven.plugins</groupId>
-                <artifactId>s3-upload-maven-plugin</artifactId>
-                <version>1.4</version>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>s3-upload</goal>
-                        </goals>
-                        <phase>deploy</phase>
-                    </execution>
-                </executions>
-                <configuration>
-                    <bucketName>packages.couchbase.com</bucketName>
-                    <source>${project.build.directory}/${dist-archive-name}</source>
-                    <destination>clients/kafka/${project.version}/${dist-archive-name}</destination>
+                    <skip>true</skip>
                 </configuration>
             </plugin>
         </plugins>
