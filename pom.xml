@@ -42,7 +42,19 @@
         </license>
     </licenses>
 
-    <properties>
+  <scm>
+    <developerConnection>scm:git:git@github.com:polopoly/kafka-connect-couchbase.git</developerConnection>
+    <url>https://github.com/polopoly/kafka-connect-couchbase.git</url>
+  </scm>
+
+  <distributionManagement>
+    <repository>
+      <id>ninja-testing</id>
+      <url>http://maven.polopoly.ninja/testing</url>
+    </repository>
+  </distributionManagement>
+
+  <properties>
         <java-compat.version>1.6</java-compat.version>
         <confluent.version>3.1.1</confluent.version>
         <kafka-connect-api.version>0.10.1.1</kafka-connect-api.version>
