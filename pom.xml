@@ -14,16 +14,14 @@
     ~ See the License for the specific language governing permissions and
     ~ limitations under the License.
     ~-->
-<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xmlns="http://maven.apache.org/POM/4.0.0"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.couchbase.client</groupId>
     <artifactId>kafka-connect-couchbase</artifactId>
     <packaging>jar</packaging>
-    <version>3.2.3-pp-SNAPSHOT</version>
+    <version>3.2.3-pp</version>
     <name>Kafka Connector for Couchbase</name>
     <organization>
         <name>Couchbase, Inc.</name>
@@ -45,6 +43,7 @@
   <scm>
     <developerConnection>scm:git:git@github.com:polopoly/kafka-connect-couchbase.git</developerConnection>
     <url>https://github.com/polopoly/kafka-connect-couchbase.git</url>
+    <tag>kafka-connect-couchbase-3.2.3-pp</tag>
   </scm>
 
   <distributionManagement>
